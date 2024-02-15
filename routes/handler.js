@@ -20,7 +20,7 @@ router.route("/:id/comments").get(getComments);
 router.route("/:id/comments").post(addComments);
 router.route("/edit/:id").put(upload.single('file'), editSinglePost);
 router.route("/:id").delete(deleteSinglePost);
-router.route("/posts").delete(deleteAllPost);
+router.route("/delete-post").delete(deleteAllPost);
 
 
 
