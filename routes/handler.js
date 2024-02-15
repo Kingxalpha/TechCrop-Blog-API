@@ -1,7 +1,7 @@
 const express = require("express");
 const multer = require("multer");
 const upload = multer({dest : 'uploads/'});
-const {login, register, profile, dashboard } = require("../controller/controller");
+const {login, register, profile } = require("../controller/controller");
 const { getAllPost, createNewPost, getSinglePost, editSinglePost, deleteSinglePost, deleteAllPost, getComments, addComments } = require("../controller/postsController");
 
 
@@ -13,7 +13,7 @@ router.route("/register").post(register);
 router.route("/profile").get(profile)
 
 // ======== Post Controllers =======
-router.route("/").get(getAllPost);
+router.route("/get-all-post").get(getAllPost);
 router.route("/create-post").post(upload.single('file'), createNewPost);
 router.route("/:title").get(getSinglePost);
 router.route("/:id/comments").get(getComments);
